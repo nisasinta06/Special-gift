@@ -1,11 +1,22 @@
-@media(max-width:768px){
+@media (max-width: 768px){
 
-    .polaroid{
-        width:150px;
+    .envelope{
+        width:90vw;
+        height:60vw;
     }
 
-    .polaroid img{
-        height:150px;
+    .letter{
+        height:250px;
+        padding:15px;
+    }
+
+    .letter h2{
+        font-size:20px;
+    }
+
+    .letter p{
+        font-size:14px;
+        line-height:1.6;
     }
 
 }
@@ -18,15 +29,15 @@
 }
 
 body{
-    background:linear-gradient(
-        135deg,
-        #ff9a9e,
-        #fad0c4
-    );
+    background:#0f0f0f;
     overflow:hidden;
+    position:relative;
 }
 
 .page{
+    position:relative;
+    z-index:1;
+
     display:none;
     width:100%;
     height:100vh;
@@ -42,7 +53,7 @@ body{
 }
 
 h1,h2,p{
-    color:white;
+    color:rgb(255, 255, 255);
 }
 
 button{
@@ -53,11 +64,55 @@ button{
     cursor:pointer;
 }
 
+.sprinkles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+.sprinkles::before,
+.sprinkles::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+
+    background-image:
+    radial-gradient(circle,#ff4d4d 2px,transparent 2px),
+    radial-gradient(circle,#4dff88 2px,transparent 2px),
+    radial-gradient(circle,#4da6ff 2px,transparent 2px),
+    radial-gradient(circle,#ffd24d 2px,transparent 2px),
+    radial-gradient(circle,#ff66cc 2px,transparent 2px);
+
+    background-size:
+    150px 150px,
+    180px 180px,
+    200px 200px,
+    160px 160px,
+    220px 220px;
+
+    animation:floatSprinkles 30s linear infinite;
+}
+
+@keyframes floatSprinkles{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(100px);
+    }
+
+}
+
 /* AMPOP */
 
 .envelope{
-    width:320px;
-    height:220px;
+    width:min(90vw, 500px);
+    height:min(65vw, 350px);
     position:relative;
     cursor:pointer;
 }
@@ -82,21 +137,21 @@ button{
 
 .letter{
     position:absolute;
-    width:90%;
-    height:200px;
-    background:white;
 
-    left:5%;
+    width:92%;
+    height:280px;
+
+    left:4%;
     top:10px;
 
-    padding:15px;
-
-    overflow:auto;
-
+    background:white;
     border-radius:10px;
 
-    transform:translateY(50px);
+    padding:20px;
 
+    overflow-y:auto;
+
+    transform:translateY(50px);
     transition:.8s;
 }
 
@@ -129,79 +184,6 @@ button{
     50%{
         transform:translateY(-15px);
     }
-}
-
-/* POLAROID */
-
-#polaroid-container{
-    display:none;
-    position:relative;
-    width:100%;
-    height:500px;
-}
-
-.polaroid{
-    position:absolute;
-
-    width:220px;
-
-    background:white;
-
-    padding:12px 12px 45px;
-
-    border-radius:4px;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.25);
-
-    opacity:0;
-
-    transition:1s;
-}
-
-.polaroid img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.polaroid span{
-    color:#444;
-    display:block;
-    margin-top:10px;
-}
-
-.p1{
-    top:100px;
-    left:35%;
-    transform:rotate(-8deg);
-}
-
-.p2{
-    top:120px;
-    left:40%;
-    transform:rotate(4deg);
-}
-
-.p3{
-    top:140px;
-    left:45%;
-    transform:rotate(-5deg);
-}
-
-.p4{
-    top:160px;
-    left:50%;
-    transform:rotate(7deg);
-}
-
-.show{
-    opacity:1;
-}
-
-.polaroid:hover{
-    transform:scale(1.08);
-    z-index:999;
 }
 
 #ending{
