@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- HALAMAN 1 -->
+    <section id="page1" class="page active">
+
+        <h1>🎉 Selamat Ulang Tahun 🎉</h1>
+
+        <p>
+            Semoga hari ini membawa banyak kebahagiaan,
+            tawa, dan hal-hal indah untukmu.
+        </p>
+
+        <button onclick="showPage(2)">
+            Buka Surat 💌
+        </button>
+
+    </section>
+
+
+    <!-- HALAMAN 2 -->
+    <section id="page2" class="page">
+
+        <div class="envelope" id="envelope">
+
+            <div class="flap"></div>
+
+            <div class="letter">
+
+                <h2>Untuk Kamu ❤️</h2>
+
+                <p>
+                    Selamat bertambah usia.
+                    Semoga segala hal baik selalu datang
+                    menghampirimu.
+
+                    Terima kasih karena telah menjadi
+                    pribadi yang kuat, baik, dan hebat.
+
+                    Jangan lupa untuk selalu bahagia,
+                    menjaga kesehatan, dan terus
+                    mengejar semua impianmu.
+                </p>
+
+                <button onclick="showPage(3)">
+                    ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HALAMAN 3 -->
+    <section id="page3" class="page">
+
+        <div id="gift" class="gift">
+            🎁
+        </div>
+
+        <h2>Klik Hadiahnya ✨</h2>
+
+        <div id="polaroid-container">
+
+            <div class="polaroid p1">
+                <img src="Image1.jpg">
+                <span>📸 Foto 1</span>
+            </div>
+
+            <div class="polaroid p2">
+                <img src="Image2.jpg">
+                <span>🌷 Foto 2</span>
+            </div>
+
+            <div class="polaroid p3">
+                <img src="Image3.jpg">
+                <span>🤍 Foto 3</span>
+            </div>
+
+            <div class="polaroid p4">
+                <img src="Image4.jpg">
+                <span>✨ Foto 4</span>
+            </div>
+
+        </div>
+
+        <div id="ending">
+            <h1>
+                Terima kasih sudah hadir di hidupku ❤️
+            </h1>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
