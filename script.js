@@ -1,14 +1,20 @@
 function showPage(page){
 
-    document
-    .querySelectorAll(".page")
-    .forEach(el=>{
+    console.log("Pindah ke page", page);
+
+    document.querySelectorAll(".page").forEach(el=>{
         el.classList.remove("active");
     });
 
-    document
-    .getElementById("page"+page)
-    .classList.add("active");
+    const target = document.getElementById("page" + page);
+
+    console.log(target);
+
+    if(target){
+        target.classList.add("active");
+    }else{
+        alert("page" + page + " tidak ditemukan");
+    }
 
 }
 
